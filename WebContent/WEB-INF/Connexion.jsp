@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Media Web Connexion</title>
+		<title>Connexion MediaWeb</title>
 		<link href=".\CSS\style.css" rel="stylesheet" type="text/css" />
 		
 	</head>
@@ -16,7 +16,9 @@
 		<div id="formulaire_co">
 			<input type="text" id="Login" placeholder="Login"><br><br>
 			<input type="password" id="password" placeholder="Mot de passe"><br><br>
-			<button id="btn_se_connecter">Se connecter</button>
+			<button id="btn_se_connecter">Se connecter</button><br><br>
+			
+			<p><a href="Mdp_oublié.jsp" id="mdp_oublié">Mot de passe oublié</a> ou bien <a href="Inscription.jsp">inscrivez-vous</a> si cela n'est pas fait !</p>
 			<p></p>
 		</div>
 	 	

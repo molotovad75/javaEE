@@ -1,7 +1,12 @@
 body{
-	background-color: red;
+	background-color:  #e5e7e9 ;
 }
 
 #Titre_site, h1,#formulaire_co{
 	text-align: center;
+}
+
+#Login, #password{
+	border-top-width: 5px;
+	border-bottom-width: 5px;
 }

@@ -19,4 +19,6 @@
 		<servlet-name>ServletDeconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern> 
 	</servlet-mapping>
+	
+	
 </web-app>
