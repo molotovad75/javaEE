@@ -9,4 +9,14 @@
 		<servlet-name>ServletConnexion</servlet-name>
 		<url-pattern>/connexion</url-pattern> 
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ServletDeconnexion</servlet-name>
+		<servlet-class>com.sdzee.services.Deconnexion</servlet-class>
+  	</servlet>
+
+  	<servlet-mapping>
+		<servlet-name>ServletDeconnexion</servlet-name>
+		<url-pattern>/deconnexion</url-pattern> 
+	</servlet-mapping>
 </web-app>
