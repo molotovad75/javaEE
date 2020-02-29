@@ -5,6 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Media Web Connexion</title>
+		<link href=".\CSS\style.css" rel="stylesheet" type="text/css" />
+		
 	</head>
 	<body>
 		<div id="Titre_site">
