@@ -14,8 +14,8 @@
 		<div id="formulaire_co">
 			<input type="text" id="Login" placeholder="Login"><br><br>
 			<input type="password" id="password" placeholder="Mot de passe"><br><br>
-			<button id="valider">Valider</button>
-			<p><% out.println("test"); %></p>
+			<button id="btn_se_connecter">Se connecter</button>
+			<p></p>
 		</div>
 	 	
 	</body>
