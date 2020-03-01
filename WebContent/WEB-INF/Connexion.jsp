@@ -18,7 +18,7 @@
 			<input type="password" id="password" placeholder="Mot de passe"><br><br>
 			<button id="btn_se_connecter">Se connecter</button><br><br>
 			
-			<p><a href="Mdp_oublié.jsp" id="mdp_oublié">Mot de passe oublié</a> ou bien <a href="Inscription.jsp">inscrivez-vous</a> si cela n'est pas fait !</p>
+			<p><a href="Mdp_oublié.jsp" id="mdp_oublié">Mot de passe oublié</a> ou bien <a href="C:\Users\Adrien\Desktop\DUT informatique\2nd annee\Semestre 4\JAVA EE\Projet JAVA EE\src\com\sdzee\services\Inscription.java">inscrivez-vous</a> si cela n'est pas fait !</p>
 			<p></p>
 		</div>
 	 	
