@@ -21,13 +21,13 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>ServletInscription</servlet-name>
-		<servlet-class>com.sdzee.services.Inscription</servlet-class>
+		<servlet-name>ServletMdp_oublie</servlet-name>
+		<servlet-class>com.sdzee.services.Mdp_oublie</servlet-class>
   	</servlet>
 
   	<servlet-mapping>
-		<servlet-name>ServletInscription</servlet-name>
-		<url-pattern>/inscription</url-pattern> 
+		<servlet-name>ServletMdp_oublie</servlet-name>
+		<url-pattern>/mdpoublie</url-pattern> 
 	</servlet-mapping>
 	
 </web-app>
