@@ -14,19 +14,24 @@ public class MediathequeData implements PersistentMediatheque{
 	
 	@Override
 	public Utilisateur getUser(String login, String password) {
-		
+		String requeteSQL="SELECT u.name u.email FROM utilisateur AS u WHERE u.login="+login+" AND u.mdp="+password+" ";
 		return null;
 	}
 
 	@Override
 	public Document getDocument(int arg0) {
+		//int arg0 siginifie probablement le numéro du document.
+		//Cd DVD ou livre peuvent être des documens.
+		String requeteSQL="SELECT l.titre_livre,d.titre_dvd,c.titre_cd FROM livre AS l, dvd AS d, cd AS c WHERE l.idlivre="+arg0+"";
 		
 		return null;
 	}
 
-	@Override //Object... arg1  est équivalent à un tableau (Object[] arg1) La taille de ce tableau est unconnue.
+	@Override //Object... arg1  est équivalent à un tableau (Object[] arg1) La taille de ce tableau est inconnue.
 	public void nouveauDocument(int arg0, Object... arg1) {
 		//Peut être que arg0 est le nombre de documents que l'on souhaite mettre dans la bibliothèque.
+		//ou bien, arg0 siginifie simplement le numéro du document.
+		
 		arg1=documents.toArray(arg1); //Converti le tableau en arraylist.
 		
 		arg0=arg1.length;
