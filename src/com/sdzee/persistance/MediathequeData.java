@@ -1,14 +1,15 @@
 package com.sdzee.persistance;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import mediatek2020.PersistentMediatheque;
 import mediatek2020.items.Document;
 import mediatek2020.items.Utilisateur;
 
 public class MediathequeData implements PersistentMediatheque{
-	 private Connection connexion;
+	 private Connection connexion=null;
+	 private Statement statement=null;
+	 private ResultSet resultat=null;
+	 
 	 ArrayList<Document> documents=new ArrayList<Document>();
 
 	public String toString() {
@@ -33,7 +34,19 @@ public class MediathequeData implements PersistentMediatheque{
 		//int arg0 siginifie probablement le numéro du document.
 		//Cd DVD ou livre peuvent être des documens.
 		String requeteSQL="SELECT l.titre_livre,d.titre_dvd,c.titre_cd FROM livre AS l, dvd AS d, cd AS c WHERE l.idlivre="+arg0+" OR d.iddvd="+arg0+" OR c.idcd="+arg0+"; ";
+		loadDatabase(requeteSQL);
 		
+		//Récupération des données.
+        try {
+			while (resultat.next()) {
+				String nom_livre=resultat.getString("l.titre_livre");
+				String nom_dvd=resultat.getString("d.titre_dvd");
+				String nom_cd=resultat.getString("c.titre_cd");
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -57,7 +70,7 @@ public class MediathequeData implements PersistentMediatheque{
 		return documents;
 	}
 	
-	private void loadDatabase() {
+	private void loadDatabase(String requeteSQL) {
         // Chargement du driver
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -67,6 +80,9 @@ public class MediathequeData implements PersistentMediatheque{
 
         try {
             connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pweb19_leroux","root","");
+            statement=connexion.createStatement();
+            //Exécution de la requête
+            resultat=statement.executeQuery(requeteSQL);
         } catch (SQLException e) {
             e.printStackTrace();
         }
