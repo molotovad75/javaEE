@@ -4,13 +4,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Connexion MediaWeb</title>
+		<title>Connexion Mediathèque</title>
 		<link href=".\CSS\style.css" rel="stylesheet" type="text/css" />
 		
 	</head>
 	<body>
 		<div id="Titre_site">
-			<p>Media Web</p><br>
+			<p>Mediathèque</p><br>
 		</div>
 		<h1>Connexion</h1><br><br>
 		<div id="formulaire_co">
