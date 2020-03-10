@@ -12,15 +12,15 @@
 		<div id="Titre_site">
 			<p>Mediathèque</p><br>
 		</div>
-		<h1>Connexion</h1><br><br>
-		<div id="formulaire_co">
-			<input type="text" id="Login" placeholder="Login"><br><br>
-			<input type="password" id="password" placeholder="Mot de passe"><br><br>
-			<button id="btn_se_connecter">Se connecter</button><br><br>
-			
+		<!-- .\.\src\com\sdzee\services\Connexion.java -->
+		<h1>Connexion</h1><br><br> 
+		<form id="formulaire_co" action="connexion" method="POST">
+			<input type="text" id="Login" placeholder="Login" name="login" /><br><br>
+			<input type="password" id="password" placeholder="Mot de passe" name="mdp" /><br><br>
+			<input type="submit" name="btn_se_connecter" value="Se connecter" onclick="doPost()" /><br><br>
 			<p><a href="/Projet_JAVA_EE/mdp_oubli" id="mdp_oublié">Mot de passe oublié</a></p>
 			<p></p>
-		</div>
-	 	
+		</form>
+	 	<%-- <% out.println(); %> --%>
 	</body>
 </html>
