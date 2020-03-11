@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,13 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.mysql.jdbc.Connection;
 import com.sdzee.persistance.DatabaseConnection;
 
-@WebServlet("/VerifBDD") 
 public class VerifBDD extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		try {
-			
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Connexion.jsp").forward(request, response);
 			String login=request.getParameter("login");	
 			String mdp=request.getParameter("mdp");
 			request.setAttribute("login", login);
@@ -51,13 +49,12 @@ public class VerifBDD extends HttpServlet {
 				String loginUtilisateur=rs.getString("u.login");
 				String mdpUtilisateur=rs.getString("u.mdp");
 				if (loginUtilisateur.equals(login)==true && mdpUtilisateur.equals(mdp)==true) {
-					this.getServletContext().getRequestDispatcher("/WEB-INF/Connexion.jsp").forward(request, response);
+					
 	            	 out.println("<html><body><b>Successfully Connected"
 	                         + "</b></body></html>");
 				}else {
 					 // Get a writer pointer  
 		            // to display the successful result 
-					this.getServletContext().getRequestDispatcher("/WEB-INF/Connexion.jsp").forward(request, response);
 					 out.println("<html><body><b>Login ou Mot de passe incorrect"
 		                        + "</b></body></html>");
 				}
