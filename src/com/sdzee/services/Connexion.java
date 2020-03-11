@@ -21,12 +21,5 @@ public class Connexion extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/Connexion.jsp").forward(request, response);
 		
 	}
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-		String login=request.getParameter("login");	
-		String mdp=request.getParameter("mdp");
-		request.setAttribute("login", login);
-		request.setAttribute("password", mdp);
-		System.out.println(login+"    "+mdp);
-	}
+
 }

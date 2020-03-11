@@ -30,4 +30,14 @@
 		<url-pattern>/mdpoublie</url-pattern> 
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ServletVerifBDD</servlet-name>
+		<servlet-class>com.sdzee.services.VerifBDD</servlet-class>
+  	</servlet>
+  	
+	<servlet-mapping>
+		<servlet-name>ServletVerifBDD</servlet-name>
+		<url-pattern>/verifbdd</url-pattern> 
+	</servlet-mapping>
+	
 </web-app>
