@@ -9,15 +9,18 @@ public class DatabaseConnection {
 	        throws SQLException, ClassNotFoundException{
 		// Initialize all the information regarding 
         // Database Connection 
-        String dbDriver ="com.mysql.jdbc.Driver"; 
-        String dbURL ="jdbc:mysql://localhost:3306/temp?useSSL=false"; 
-        // Database name to access 
-        String dbName ="pweb19_leroux"; 
+		String dbName ="pweb19_leroux"; 
+        String SSL="temp?useSSL=false";
         String dbUsername ="root"; 
         String dbPassword =""; 
-        Class.forName(dbDriver); 
-        Connection con =DriverManager.getConnection(dbURL + dbName, dbUsername, dbPassword); 
         
+        String dbDriver ="com.mysql.jdbc.Driver"; 
+        String dbURL ="jdbc:mysql://localhost:3306/"+dbName+""; 
+        // Database name to access 
+        
+        Class.forName(dbDriver); 
+        Connection con =DriverManager.getConnection(dbURL +SSL, dbUsername, dbPassword); 
+//        http://localhost/phpmyadmin/index.php?db=pweb19_leroux&target=db_structure.php
         return con;
 	}
 }
