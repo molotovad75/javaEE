@@ -9,13 +9,12 @@ public class DatabaseConnection {
 	        throws SQLException, ClassNotFoundException{
 		// Initialize all the information regarding 
         // Database Connection 
-		String dbName ="pweb19_leroux"; 
-        String SSL="temp?useSSL=false";
+        String SSL="/temp?useSSL=false";
         String dbUsername ="root"; 
         String dbPassword =""; 
         
         String dbDriver ="com.mysql.jdbc.Driver"; 
-        String dbURL ="jdbc:mysql://localhost:3306/"+dbName+""; 
+        String dbURL ="jdbc:mysql://localhost:3306/pweb19_leroux"; 
         // Database name to access 
         
         Class.forName(dbDriver); 

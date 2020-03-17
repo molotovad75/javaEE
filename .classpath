@@ -20,5 +20,6 @@
 	<classpathentry kind="lib" path="C:/Users/Adrien/Desktop/DUT informatique/2nd annee/Semestre 4/JAVA EE/Projet de AppServJAVA/projet-ASJ-serveur.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Adrien/Desktop/DUT informatique/2nd annee/Semestre 4/JAVA EE/Projet de AppServJAVA/projet-ASJ-serveur-runnable.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Adrien/Desktop/DUT informatique/2nd annee/Semestre 4/JAVA EE/mysql-connector-java-5.1.48-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adrien/Desktop/DUT informatique/2nd annee/Semestre 4/JAVA EE/mysql-connector.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

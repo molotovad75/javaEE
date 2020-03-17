@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+	    
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,14 +16,18 @@
 		</div>
 		<!-- .\.\src\com\sdzee\services\Connexion.java -->
 		<!-- .\src\com.sdzee.services\VerifBDD.java -->
+		<!-- action="/Projet_JAVA_EE/mdpoublie" method="POST" onSubmit="return verifform1()" -->
 		<h1>Connexion</h1><br><br> 
-		<form id="formulaire_co"  action="/Projet_JAVA_EE/verifbdd" method="POST">
-			<input type="text" id="Login" placeholder="Login" name="login" /><br><br>
-			<input type="password" id="password" placeholder="Mot de passe" name="mdp" /><br><br>
-			<input type="submit" name="btn_se_connecter" value="Se connecter" href="" /><br><br>
-			<p><a href="/Projet_JAVA_EE/mdpoublie" id="mdp_oublié">Mot de passe oublié</a></p>
-			<p></p>
+		<form id="formulaire_co" action="./EnvoiBDD" method="post">
+				<input type="text" id="Login" placeholder="Login" name="login" /><br><br>
+				<input type="password" id="password" placeholder="Mot de passe" name="mdp" /><br><br>
+				<input type="submit" name="btn_se_connecter" value="Se connecter" formaction="/Projet_JAVA_EE/EnvoiBDD" /><br><br>
+				<p><a href="/Projet_JAVA_EE/mdpoublie" id="mdp_oublié">Mot de passe oublié</a></p>
 		</form>
+	 	<%
+	 		String message=(String) request.getAttribute("login_mdp");
 	 	
+	 			out.println(message);
+	 	%>
 	</body>
 </html>

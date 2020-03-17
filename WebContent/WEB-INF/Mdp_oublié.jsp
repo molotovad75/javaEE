@@ -8,6 +8,9 @@
 		<link href=".\CSS\style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-
+		<form action="">
+			<input type="text" id="Login" placeholder="Saisissez votre mail" name="login" /><br><br>
+			<input type="submit" name="btn_continuer" value="continuer" /><br><br>
+		</form>
 	</body>
 </html>

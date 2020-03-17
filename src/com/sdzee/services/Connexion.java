@@ -15,6 +15,10 @@ public class Connexion extends HttpServlet {
 	/*On va chercher le fichier JSP pour afficher la page. 
 	*Le client passe à travers cette méthode obligatoirement par cette servlet.
 	*/
+	public Connexion() {
+		super();
+	}
+	
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 //		String message = "Transmission de variables : OK !";
 		

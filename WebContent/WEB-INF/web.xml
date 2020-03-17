@@ -31,13 +31,13 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>ServletVerifBDD</servlet-name>
-		<servlet-class>com.sdzee.services.VerifBDD</servlet-class>
+		<servlet-name>ServletEnvoiBDD</servlet-name>
+		<servlet-class>com.sdzee.services.EnvoiBDD</servlet-class>
   	</servlet>
   	
 	<servlet-mapping>
-		<servlet-name>ServletVerifBDD</servlet-name>
-		<url-pattern>/verifbdd</url-pattern> 
+		<servlet-name>ServletEnvoiBDD</servlet-name>
+		<url-pattern>/EnvoiBDD</url-pattern> 
 	</servlet-mapping>
 	
 </web-app>
