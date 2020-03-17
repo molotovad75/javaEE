@@ -1,19 +1,19 @@
 package application;
 
 public class Utilisateur {
-	private String nom;
-	private String prénom;
-	public String getNom() {
-		return nom;
+	private String login;
+	private String mdp;
+	public String getlogin() {
+		return login;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setlogin(String login) {
+		this.login = login;
 	}
-	public String getPrénom() {
-		return prénom;
+	public String getmdp() {
+		return mdp;
 	}
-	public void setPrénom(String prénom) {
-		this.prénom = prénom;
+	public void setmdp(String mdp) {
+		this.mdp = mdp;
 	}
 	
 	

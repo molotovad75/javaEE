@@ -42,7 +42,7 @@ public class MediathequeData implements PersistentMediatheque{
 				+ "FROM livre AS l, dvd AS d, cd AS c, auteur AS a "
 				+ "WHERE (l.idlivre="+arg0+" OR d.iddvd="+arg0+" OR c.idcd="+arg0+") "
 						+ "AND (a.idauteur=l.idauteur OR a.idauteur=d.idauteur OR a.idauteur=c.idauteur);";
-		loadDatabase(requeteSQL);
+		DatabaseConnection.loadDatabase();
 		
 		//Récupération des données.
         try {
@@ -81,21 +81,5 @@ public class MediathequeData implements PersistentMediatheque{
 		return documents;
 	}
 	
-	private void loadDatabase(String requeteSQL) {
-        // Chargement du driver
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-               e.getMessage();
-        }
-
-        try {
-            connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pweb19_leroux","root","");
-            statement=connexion.createStatement();
-            //Exécution de la requête
-            resultat=statement.executeQuery(requeteSQL);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+	
 }
