@@ -70,7 +70,9 @@ public class EnvoiBDD extends HttpServlet {
 //		request.setAttribute("login_mdp",message);
 				
 		Login_mdp login_mdp= new Login_mdp();
-		request.setAttribute("login_mdp", login_mdp.recupererUtilisateur());
+		login_mdp.recupererUtilisateur();
+		request.setAttribute("login", Login_mdp.getLogin());
+		request.setAttribute("mdp", Login_mdp.getMdp());
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/Connexion.jsp").forward(request, response);
 	}

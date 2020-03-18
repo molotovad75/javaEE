@@ -4,7 +4,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import com.mysql.jdbc.ResultSet;
+import com.mysql.jdbc.Statement;
 import com.sdzee.services.EnvoiBDD;
 
 import application.Utilisateur;
@@ -12,24 +13,60 @@ import application.Utilisateur;
 
 public class Login_mdp extends DatabaseConnection{
 	
+	private List<Utilisateur>utilisateurs;
+	private static String login="";
+	private static String mdp="";
+	
+	
+	public List<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+
+
+	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
+	}
+
+
+	public static String getLogin() {
+		return login;
+	}
+
+
+	public static void setLogin(String login) {
+		Login_mdp.login = login;
+	}
+
+
+	public static String getMdp() {
+		return mdp;
+	}
+
+
+	public static void setMdp(String mdp) {
+		Login_mdp.mdp = mdp;
+	}
+
+
 	public List<Utilisateur> recupererUtilisateur(){
-		List<Utilisateur>utilisateurs=new ArrayList<Utilisateur>();
-		java.sql.Statement statement=null;
-		java.sql.ResultSet resultat=null;
+		
+		utilisateurs=new ArrayList<Utilisateur>();
+		Statement statement=null;
+		ResultSet resultat=null;
 		DatabaseConnection.loadDatabase();
 		
 		try {
-			statement= connexion.createStatement();
+			statement= (Statement) connexion.createStatement();
 			
 			
 			String reqSQL="SELECT u.login,u.mdp FROM utilisateur AS u WHERE u.login="+EnvoiBDD.getLogin()+" AND u.mdp="+EnvoiBDD.getMdp()+";";
 			//Exécution de la requête SQL
-			resultat= statement.executeQuery(reqSQL);
+			resultat= (ResultSet) statement.executeQuery(reqSQL);
 			
 			 
 			while (resultat.next()) {
-				String login=resultat.getString("u.login");
-				String mdp=resultat.getString("u.mdp");
+				login=resultat.getString("u.login");
+				mdp=resultat.getString("u.mdp");
 				Utilisateur utilisateur=new Utilisateur();
 				utilisateur.setlogin(login);
 				utilisateur.setmdp(mdp);

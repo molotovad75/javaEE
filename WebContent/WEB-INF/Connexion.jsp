@@ -24,17 +24,13 @@
 				<input type="submit" name="btn_se_connecter" value="Se connecter" formaction="/Projet_JAVA_EE/EnvoiBDD" /><br><br>
 				<p><a href="/Projet_JAVA_EE/mdpoublie" id="mdp_oublié">Mot de passe oublié</a></p>
 		</form>
-	 <%-- 	<%
-	 		String message=(String) request.getAttribute("login_mdp");
-	 	
-	 			out.println(message);
-	 	%> --%>
 	 	
 	 	<ul>
 	 		
-	 		<c:forEach items="${ utilisateurs }" var="utilisateur"  varStatus="status">
-	 			<p> <c:out value="${utilisateur.login}"/> : <c:out value="${utilisateur.mdp}"/></p>
-	 		</c:forEach>
+	 		<c:set var="${ login }" >
+	 			<p>  <c:out value="${ utilisateur }"/></p>
+	 		</c:set>
+	 		
 	 	</ul>
 	</body>
 </html>
