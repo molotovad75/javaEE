@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-	    
+    pageEncoding="UTF-8" import="com.sdzee.services.EnvoiBDD" 
 %>
 <!DOCTYPE html>
 <html>
@@ -25,12 +24,8 @@
 				<p><a href="/Projet_JAVA_EE/mdpoublie" id="mdp_oublié">Mot de passe oublié</a></p>
 		</form>
 	 	
-	 	<ul>
+ 		<c:set var="pseudo" value="${ login }" scope="page"/>	
+ 		<p><c:out value="${ pseudo }"/></p>
 	 		
-	 		<c:set var="${ login }" >
-	 			<p>  <c:out value="${ utilisateur }"/></p>
-	 		</c:set>
-	 		
-	 	</ul>
 	</body>
 </html>
