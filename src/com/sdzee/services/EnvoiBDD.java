@@ -21,8 +21,8 @@ public class EnvoiBDD extends HttpServlet {
 		Login_mdp login_mdp= new Login_mdp();
 		login_mdp.recupererUtilisateur(request.getParameter("login"), request.getParameter("mdp"));
 		
-		request.setAttribute("login", Login_mdp.getLogin());
-		request.setAttribute("mdp", Login_mdp.getMdp());
+//		request.setAttribute("login", Login_mdp.getLogin());
+//		request.setAttribute("mdp", Login_mdp.getMdp());
 		
 		if (request.getParameter("login").compareTo(Login_mdp.getLogin())==0 
 				&& request.getParameter("mdp").compareTo(Login_mdp.getMdp())==0) {
@@ -30,6 +30,7 @@ public class EnvoiBDD extends HttpServlet {
 			System.out.println("sss");
 			this.getServletContext().getRequestDispatcher("/WEB-INF/Mdp_oublié.jsp").forward(request, response);
 		}else {
+			System.out.println("utu");
 			this.getServletContext().getRequestDispatcher("/WEB-INF/Connexion.jsp").forward(request, response);
 			
 		}

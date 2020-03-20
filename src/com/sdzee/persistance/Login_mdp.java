@@ -30,7 +30,6 @@ public class Login_mdp extends DatabaseConnection{
 				user.add(utilisateur);	
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		setLogin(login);
