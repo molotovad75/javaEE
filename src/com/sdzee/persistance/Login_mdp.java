@@ -5,10 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import application.Utilisateur;
+
+import com.sdzee.beans.Utilisateur;
 
 
 public class Login_mdp extends DatabaseConnection{
+	
+	
+	
+	
 	
 	private List<Utilisateur>utilisateurs;
 	private static String login="";
@@ -16,12 +21,20 @@ public class Login_mdp extends DatabaseConnection{
 	
 	public List<Utilisateur> recupererUtilisateur(String login,String mdp){
 		List<Utilisateur> user=new ArrayList<Utilisateur>();
-		Connection conn=DatabaseConnection.getConnexion();
+		Connection conn = null;
 		try {
-			PreparedStatement ps=conn.prepareStatement
-					("SELECT u.login,u.mdp FROM utilisateur AS u WHERE u.login=? AND u.mdp=?");
-			ps.setString(1, "%"+login+"%");
-			ps.setString(2, "%"+mdp+"%");
+			conn = DatabaseConnection.getConnexion();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			PreparedStatement ps=conn.prepareStatement("SELECT u.login,u.mdp FROM utilisateur AS u WHERE u.login=? AND u.mdp=?");
+			ps.setString(1, login);
+			ps.setString(2, mdp);
 			java.sql.ResultSet rs=ps.executeQuery();
 			while (rs.next()) {
 				Utilisateur utilisateur=new Utilisateur();
@@ -35,7 +48,6 @@ public class Login_mdp extends DatabaseConnection{
 		setLogin(login);
 		setMdp(mdp);
 		return user;
-
 	}
 	
 	public List<Utilisateur> getUtilisateurs() {
@@ -65,5 +77,7 @@ public class Login_mdp extends DatabaseConnection{
 
 	public static void setMdp(String mdp) {
 		Login_mdp.mdp = mdp;
-	}	
+	}
+	
+	
 }
